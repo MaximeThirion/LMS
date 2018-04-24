@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $requested_url = $_SERVER['PATH_INFO'];
 
 if (!$requested_url) {
@@ -9,8 +11,34 @@ if (!$requested_url) {
 //init
 require 'config/routes.php';
 require 'tools/Logger.php';
+require 'config/database.php';
+include 'tools/Manager/UserManager.php';
+include 'tools/Model/User.php';
+
+use LMS\UserManager;
+
+$userManager = new UserManager();
+$userManager->setBDD($base_de_donnee);
 
 $logger = new Logger();
+
+foreach ($userManager->requeteAll() as $users) {
+
+    if ($users->id === $_SESSION['user_id']) {
+
+        $user = [
+            "id" => $users->id,
+            "email" => $users->email,
+            "password" => $users->password,
+            "lastname" => $users->lastname,
+            "firstname" => $users->firstname,
+            "secret_question" => $users->secret_question,
+            "last_login" => $users->last_login,
+            "created_at" => $users->created_at,
+            "updated_at" => $users->updated_at
+            ];
+    }
+}
 
 //Est ce que la route existe ?
 if (array_key_exists($requested_url, $routes_config)) {
@@ -39,16 +67,3 @@ else {
     $logger->log("controller not found : ${requested_url}");
     require 'controller/error/404.php';
 }
-
-//try {
-//    if ($requested_url === '/auth/login') {
-//
-//        require 'controller/auth/login.php';
-//    }
-//    else {
-//        throw new Exception("Page not found");
-//    }
-//}
-//catch (Exception $ex) {
-//    die($ex->getMessage());
-//}
