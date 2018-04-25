@@ -5,26 +5,19 @@ $email = array_key_exists('email', $_POST) ? $_POST['email'] : '';
 $password = array_key_exists('password', $_POST) ? $_POST['password'] : '';
 $error_message = '';
 
+foreach ($userManager->requeteAll() as $users) {
 
-if (strlen($password) >= 8) {
+    if ($email === $users->email && (sha1($password) === $users->password)) {
 
-    foreach ($userManager->requeteAll() as $users) {
+        $_SESSION['user_id'] = $users->id;
 
-        if ($email === $users->email && (sha1($password) === $users->password)) {
+        $requete = $base_de_donnee->prepare('UPDATE user SET last_login = CURRENT_TIME WHERE email = :valeur');
+        $requete->bindParam('valeur', $email);
+        $requete->execute();
 
-            $_SESSION['user_id'] = $users->id;
-
-            $requete = $base_de_donnee->prepare('UPDATE user SET last_login = CURRENT_TIME WHERE email = :valeur');
-            $requete->bindParam('valeur', $email);
-            $requete->execute();
-
-            header('Location: http://localhost:8080/dashboard');
-            exit();
-        }
+        header('Location: http://localhost:8080/dashboard');
+        exit();
     }
-}
-else {
-    $error_message = "Le mot de passe doit contenir au moins 8 caractères";
 }
 
 ?>
