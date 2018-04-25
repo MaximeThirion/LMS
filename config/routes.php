@@ -5,5 +5,6 @@ $routes_config = [
     '/auth/login' => 'controller/auth/login.php',
     '/auth/logout' => 'controller/auth/logout.php',
     '/auth/forgot_password' => 'controller/auth/forgot_password.php',
-    '/dashboard' => 'controller/dashboard/index.php'
+    '/dashboard' => 'controller/dashboard/index.php',
+    '/profile' => 'controller/profile/index.php'
 ];

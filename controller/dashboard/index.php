@@ -3,5 +3,5 @@
 ?>
 
 <div>
-    Bienvenue <?=$USER->firstname?> <?=$USER->lastname?>
+    Bienvenue <?=$USER->getPresentation()?>
 </div>

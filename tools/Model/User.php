@@ -13,4 +13,8 @@ class User {
     public $last_login;
     public $created_at;
     public $updated_at;
+
+    public function getPresentation() {
+        return $this->firstname." ".$this->lastname;
+    }
 }

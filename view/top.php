@@ -20,30 +20,27 @@ if (isset($_POST['bouton_connexion'])) {
     <link rel="stylesheet" href="/view/assets/css/bootstrap.min.css">
     <script src="../config/script.js"></script>
 </head>
-<body style="color: white">
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
 
 <?php
 
 if ($user_id) {?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
-    <a class="navbar-brand" href="#">Accueil</a>
-    <form method="post" class="form-inline">
-        <a href="" class="nav-link text-light mr-sm-0"><?=$USER->firstname?> <?=$USER->lastname?></a>
-        <button class="btn font-weight-bold my-2 my-sm-0" name="bouton_deconnexion" type="submit">DECONNEXION</button>
-    </form>
-</nav>
+<a class="navbar-brand" href="/dashboard">Accueil</a>
+<form method="post" class="form-inline">
+    <a href="/profile" class="nav-link text-light mr-sm-0"><?=$USER->getPresentation()?></a>
+    <button class="btn font-weight-bold my-0 my-sm-0" name="bouton_deconnexion" type="submit">DECONNEXION</button>
+</form>
 
 <?php }
 else { ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
-    <a class="navbar-brand" href="#">Accueil</a>
-    <form method="post" class="form-inline my-0 my-lg-0">
-        <button class="btn font-weight-bold my-2 my-sm-0" name="bouton_connexion" type="submit">CONNEXION</button>
-    </form>
+<a class="navbar-brand" href="http://localhost:8080">Accueil</a>
+<form method="post" class="form-inline">
+    <button class="btn font-weight-bold my-0 my-sm-0" name="bouton_connexion" type="submit">CONNEXION</button>
+</form>
+
+<?php } ?>
+
 </nav>
-
-<?php }
-
-?>
