@@ -16,10 +16,10 @@ form div {
   form div a {
     font-size: 12px;
     text-align: center; }
-  form div button {
-    margin: 10px auto 20px auto;
-    background-color: #006DF0;
-    color: white; }
+form button {
+  margin: 10px auto 20px auto;
+  background-color: #006DF0;
+  color: white; }
 
 .lockpad {
   height: 120px;
@@ -30,5 +30,10 @@ form div {
   padding: 30px;
   background-color: #1E2833;
   border-radius: 10px; }
+
+#bouton_connexion {
+  margin: 10px auto 20px auto;
+  background-color: #006DF0;
+  color: white; }
 
 /*# sourceMappingURL=style.css.map */

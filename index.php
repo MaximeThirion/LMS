@@ -22,22 +22,17 @@ $userManager->setBDD($base_de_donnee);
 
 $logger = new Logger();
 
-foreach ($userManager->requeteAll() as $users) {
+$user_id = $_SESSION['user_id'];
 
-    if ($users->id === $_SESSION['user_id']) {
+$USER = null;
 
-        $user = [
-            "id" => $users->id,
-            "email" => $users->email,
-            "password" => $users->password,
-            "lastname" => $users->lastname,
-            "firstname" => $users->firstname,
-            "secret_question" => $users->secret_question,
-            "last_login" => $users->last_login,
-            "created_at" => $users->created_at,
-            "updated_at" => $users->updated_at
-            ];
-    }
+if ($user_id) {
+
+    $requete = $base_de_donnee->prepare('SELECT id, email, password, lastname, firstname, secret_question, last_login, created_at, updated_at FROM user WHERE id = :id');
+    $requete->bindParam('id', $user_id);
+    $requete->execute();
+
+    $USER = $requete->fetchObject('LMS\User');
 }
 
 //Est ce que la route existe ?

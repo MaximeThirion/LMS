@@ -1,7 +1,7 @@
 <?php
 
-echo "<pre>";
-print_r($user);
-echo "</pre>";
+?>
 
-echo "Bonjour ".$user['firstname']." ".$user['lastname'];
+<div>
+    Bienvenue <?=$USER->firstname?> <?=$USER->lastname?>
+</div>
