@@ -24,6 +24,8 @@ $logger = new Logger();
 
 $user_id = $_SESSION['user_id'];
 
+$message = "";
+
 $USER = null;
 
 if ($user_id) {
