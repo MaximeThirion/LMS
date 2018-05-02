@@ -57,8 +57,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         mot_de_passe.addEventListener('keyup', function (ev) {
 
-            const alerte_mot_de_passe = document.getElementById('alerte_mot_de_passe');
-
             if (mot_de_passe.value.length <= 7) {
                 envoyer_formulaire_profil.setAttribute("disabled", "disabled");
                 mot_de_passe.classList.add('is-invalid');
