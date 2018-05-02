@@ -86,6 +86,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 mot_de_passe.classList.remove('is-invalid');
             }
         });
-
     }
 });
