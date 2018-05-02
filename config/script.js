@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     if (envoyer_formulaire) {
 
-        const mot_de_passe = document.getElementById('exampleInputPassword1');
+        const mot_de_passe = document.getElementById('password_login');
 
         if (mot_de_passe.value.length === 0) {
             envoyer_formulaire.setAttribute("disabled", "disabled");
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     if (envoyer_forgot_password) {
 
-        const mot_de_passe = document.getElementById('exampleInputPassword3');
+        const mot_de_passe = document.getElementById('password_forgot');
 
         if (mot_de_passe.value.length === 0) {
             envoyer_forgot_password.setAttribute("disabled", "disabled");
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     if (envoyer_formulaire_profil) {
 
-        const mot_de_passe = document.getElementById('exampleInputPassword2');
+        const mot_de_passe = document.getElementById('password_profile');
 
         if (mot_de_passe.value.length === 0) {
             envoyer_formulaire_profil.setAttribute("disabled", "disabled");

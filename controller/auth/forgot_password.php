@@ -45,7 +45,7 @@ foreach ($userManager->requeteAll() as $users) {
                         <input type="password"
                                class="form-control"
                                name="new_password"
-                               id="exampleInputPassword3"
+                               id="password_forgot"
                                placeholder="Nouveau mot de passe"
                                value=""
                                autocomplete="off">

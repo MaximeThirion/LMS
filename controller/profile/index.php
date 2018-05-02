@@ -37,9 +37,9 @@ if (isset($_POST['profil_envoyer'])) {
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword2">Nouveau mot de passe :</label>
+                        <label for="password_profile">Nouveau mot de passe :</label>
                         <input type="password" name="nouveau_mot_de_passe" class="form-control"
-                               id="exampleInputPassword2" placeholder="Mot de passe">
+                               id="password_profile" placeholder="Mot de passe">
                         <div class="valid-feedback">
                             Valide.
                         </div>

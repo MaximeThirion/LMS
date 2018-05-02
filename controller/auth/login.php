@@ -10,8 +10,8 @@ foreach ($userManager->requeteAll() as $users) {
 
         $_SESSION['user_id'] = $users->id;
 
-        $requete = $base_de_donnee->prepare('UPDATE user SET last_login = CURRENT_TIME WHERE email = :valeur');
-        $requete->bindParam('valeur', $email);
+        $requete = $base_de_donnee->prepare('UPDATE user SET last_login = CURRENT_TIME WHERE email = :email');
+        $requete->bindParam('email', $email);
         $requete->execute();
 
         header('Location: http://localhost:8080/dashboard');
@@ -44,7 +44,7 @@ if (isset($_POST['forgot_pass'])) {
                         <input type="password"
                                class="form-control"
                                name="password"
-                               id="exampleInputPassword1"
+                               id="password_login"
                                placeholder="Password"
                                value="<?=$password?>"
                                autocomplete="off">
