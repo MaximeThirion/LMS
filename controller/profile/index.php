@@ -51,7 +51,7 @@ if (isset($_POST['profil_envoyer'])) {
                 <div class="form-group">
                     <label>Prenom : <strong><?= $USER->firstname ?></strong></label>
                     <div>
-                        <label for="exampleInputPassword1">Nouveau prenom :</label>
+                        <label for="exampleInputPrenom1">Nouveau prenom :</label>
                         <input type="text" name="nouveau_prenom" class="form-control" id="exampleInputPrenom1"
                                placeholder="Prenom" value="<?= $USER->firstname ?>">
                     </div>
@@ -59,7 +59,7 @@ if (isset($_POST['profil_envoyer'])) {
                 <div class="form-group">
                     <label>Nom : <strong><?= $USER->lastname ?></strong></label>
                     <div>
-                        <label for="exampleInputPassword1">Nouveau nom :</label>
+                        <label for="exampleInputNom1">Nouveau nom :</label>
                         <input type="text" name="nouveau_nom" class="form-control" id="exampleInputNom1" placeholder="Nom"
                                value="<?= $USER->lastname ?>">
                     </div>
