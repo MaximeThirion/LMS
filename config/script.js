@@ -51,6 +51,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         if (mot_de_passe.value.length === 0) {
             envoyer_formulaire_profil.setAttribute("disabled", "disabled");
+            mot_de_passe.classList.add('is-invalid');
+            mot_de_passe.classList.remove('is-valid');
         }
 
         mot_de_passe.addEventListener('keyup', function (ev) {
